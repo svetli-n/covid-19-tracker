@@ -1,0 +1,5 @@
+.elasticbeanstalk
+__pycache__
+.idea
+*.swp
+*.db

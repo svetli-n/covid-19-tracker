@@ -1,0 +1,27 @@
+<html>
+    <head>
+        {% if title %}
+        <title>COVID-19 {{ title }}</title>
+        {% else %}
+        <title>COVID-19 tracker</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            COVID-19 tracker:
+            <a href="/index">Home</a>
+            <a href="/collect">Collect</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
